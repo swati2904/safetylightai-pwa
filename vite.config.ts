@@ -2,25 +2,24 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { VitePWA } from 'vite-plugin-pwa'
 
-// We serve under /secura-pwa/ both in dev and when deploying to GitHub Pages.
-const base = '/secura-pwa/'
+// GitHub Pages project URL will be /safetylightai-pwa/
+const base = '/safetylightai-pwa/'
 
 export default defineConfig({
   base,
   plugins: [
     react(),
     VitePWA({
-      // injectRegister: 'auto',
       registerType: 'autoUpdate',
-      devOptions: { enabled: true }, // enable PWA in dev so we can test Install
-      includeAssets: ['icons/icon-192.png', 'icons/icon-512.png'],
+      devOptions: { enabled: true }, // helpful while developing
+      includeAssets: ['icons/icon-192.png','icons/icon-512.png'],
       manifest: {
-        id: '/secura-pwa/',          // keep trailing slash for consistency
-        name: 'Secura',
-        short_name: 'Secura',
-        description: 'Secura — explainable safety copilot (PWA)',
-        start_url: '/secura-pwa/',   // MUST match how you open the app
-        scope: '/secura-pwa/',       // MUST match
+        id: '/safetylightai',
+        name: 'SafetyLight AI',
+        short_name: 'SafetyLight',
+        description: 'SafetyLight AI — explainable safety copilot (PWA)',
+        start_url: '/safetylightai-pwa/',
+        scope: '/safetylightai-pwa/',
         display: 'standalone',
         theme_color: '#0ea5e9',
         background_color: '#0b1220',
@@ -30,7 +29,7 @@ export default defineConfig({
         ]
       },
       workbox: {
-        globPatterns: ['**/*.{js,css,html,ico,png,svg}'],
+        globPatterns: ['**/*.{js,css,html,ico,png,svg}']
       }
     })
   ]
