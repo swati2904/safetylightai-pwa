@@ -17,7 +17,6 @@ const nav = [
 
 export default function AppShell() {
   return (
-    // solid gradient background (already in your project)
     <div className="min-h-dvh relative overflow-x-hidden text-slate-100 bg-gradient-to-b from-slate-950 via-slate-950 to-slate-900">
       <div className="grid grid-cols-1 md:grid-cols-[260px_1fr]">
         {/* Sidebar (desktop) */}
