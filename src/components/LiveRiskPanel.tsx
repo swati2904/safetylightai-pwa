@@ -11,7 +11,7 @@ export default function LiveRiskPanel() {
     <motion.div
       initial={{ opacity: 0, y: 12 }}
       animate={{ opacity: 1, y: 0 }}
-      className="rounded-2xl p-5 border border-white/10 bg-white/5 backdrop-blur-md"
+      className="rounded-2xl p-5 border border-white/10 bg-slate-900/70 md:bg-white/5 md:backdrop-blur-md"
     >
       <div className="flex items-center justify-between">
         <div className="text-sm font-medium opacity-90">Environment risk</div>
@@ -19,7 +19,7 @@ export default function LiveRiskPanel() {
       </div>
       <div className="mt-4 grid grid-cols-3 gap-3">
         {buckets.map((b) => (
-          <div key={b.label} className="rounded-xl p-3 border border-white/10 bg-slate-900/50">
+          <div key={b.label} className="rounded-xl p-3 border border-white/10 bg-slate-900/70">
             <div className="text-xs opacity-70">{b.label}</div>
             <div className="mt-1 text-2xl font-semibold">{b.v}%</div>
             <div className="mt-2 h-1 rounded-full bg-white/10">

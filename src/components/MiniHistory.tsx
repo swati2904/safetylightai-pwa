@@ -3,7 +3,7 @@ export function MiniHistory() {
     { t: '12:01', s: 12 }, { t: '12:05', s: 54 }, { t: '12:07', s: 72 }, { t: '12:12', s: 38 }
   ]
   return (
-    <div className="rounded-2xl p-5 border border-white/10 bg-white/5 backdrop-blur-md">
+    <div className="rounded-2xl p-5 border border-white/10 bg-slate-900/70 md:bg-white/5 md:backdrop-blur-md">
       <div className="flex items-center justify-between">
         <div className="text-sm font-medium opacity-90">Recent scores</div>
         <a href="/history" className="text-xs opacity-70 hover:opacity-100">View all</a>

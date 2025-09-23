@@ -1,10 +1,14 @@
 
 @import "tailwindcss";
 
-/* Make the app feel native dark and avoid white gutters */
-:root { color-scheme: dark; }
-html, body, #root { height: 100%; }
-body { margin: 0; background: #05070b; }
+body {
+  display: block !important;   
+  place-items: normal !important;
+  min-width: 0 !important;    
+}
+
+/* Solid dark base so there is never a light seam */
+html, body, #root { background-color: #0b1220; }
 
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;

@@ -1,5 +1,8 @@
 import { Outlet, NavLink } from 'react-router-dom'
-import { ShieldCheck, Link2, Shield, FileSearch, Lock, History, Settings, Search, Download } from 'lucide-react'
+import {
+  ShieldCheck, Link2, Shield, FileSearch, Lock, History, Settings,
+  Search, Download
+} from 'lucide-react'
 import LiveRiskPanel from '../components/LiveRiskPanel'
 import { MiniHistory } from '../components/MiniHistory'
 
@@ -14,20 +17,11 @@ const nav = [
 
 export default function AppShell() {
   return (
-    <div className="min-h-dvh relative overflow-x-hidden text-slate-100">
-      {/* Full-viewport background */}
-      <div
-        className="fixed inset-0 -z-10 bg-slate-950
-        [background:radial-gradient(90%_80%_at_10%_0%,rgba(14,165,233,.35)_0%,transparent_40%),radial-gradient(60%_60%_at_90%_10%,rgba(139,92,246,.25)_0%,transparent_45%)]"
-      />
-      {/* glow blobs */}
-      <div className="pointer-events-none fixed inset-0 -z-10 opacity-30">
-        <div className="absolute -top-24 -left-24 size-72 rounded-full blur-3xl bg-sky-500/30" />
-        <div className="absolute -bottom-24 -right-24 size-72 rounded-full blur-3xl bg-indigo-500/20" />
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-[260px_1fr]">
-        {/* Sidebar (desktop) */}
+    <div className="min-h-dvh relative overflow-x-hidden text-slate-100
+        bg-gradient-to-b from-slate-950 via-slate-950 to-slate-900">
+    
+     <div className="grid grid-cols-1 md:grid-cols-[260px_1fr]">
+        {/* Desktop sidebar */}
         <aside className="hidden md:flex md:flex-col border-r border-white/10 bg-slate-900/60 backdrop-blur">
           <div className="flex items-center gap-3 p-4">
             <div className="flex size-10 items-center justify-center rounded-xl bg-sky-500/20 ring-1 ring-sky-400/30">
@@ -54,8 +48,8 @@ export default function AppShell() {
           <div className="p-3 text-[11px] opacity-60">PWA • offline-first</div>
         </aside>
 
-        {/* Content */}
-        <main className="min-h-dvh">
+        {/* CONTENT */}
+        <main className="min-h-dvh isolate">
           {/* Mobile header */}
           <header className="md:hidden sticky top-0 z-10 flex items-center justify-between bg-slate-900/80 backdrop-blur px-4 py-3 border-b border-white/10">
             <div className="flex items-center gap-2">
@@ -70,7 +64,7 @@ export default function AppShell() {
             </button>
           </header>
 
-          {/* App bar + grid */}
+          {/* App bar + grid content */}
           <div className="mx-auto max-w-[1400px] p-6">
             <div className="flex items-center justify-between gap-4">
               <div>
@@ -98,8 +92,8 @@ export default function AppShell() {
             </div>
           </div>
 
-          {/* Bottom tabs (mobile) */}
-          <nav className="md:hidden fixed bottom-0 inset-x-0 flex justify-around border-t border-white/10 bg-slate-900/90 backdrop-blur px-2 py-2">
+          {/* Mobile bottom tabs on top of content */}
+          <nav className="md:hidden fixed bottom-0 inset-x-0 z-20 flex justify-around border-t border-white/10 bg-slate-900/90 backdrop-blur px-2 py-2">
             {nav.slice(0,4).map(({to,label,Icon})=>(
               <NavLink key={to} to={to}
                 className={({isActive}) =>

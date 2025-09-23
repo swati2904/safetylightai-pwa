@@ -1,14 +1,14 @@
 import { motion } from 'framer-motion'
 import { Sparkles, ExternalLink, Bug, Clipboard } from 'lucide-react'
 
-const ResultCard =({ title, score, reasons = [] }: { title: string; score?: number; reasons?: string[] }) => {
+export default function ResultCard({ title, score, reasons = [] }: { title: string; score?: number; reasons?: string[] }) {
   const v = typeof score === 'number' ? Math.max(0, Math.min(100, score)) : undefined
   const label = v == null ? '—' : v < 30 ? 'Safe' : v < 70 ? 'Suspicious' : 'High Risk'
 
   return (
     <motion.div
       initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}
-      className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md p-5"
+      className="relative overflow-hidden rounded-2xl border border-white/10 bg-slate-900/70 md:bg-white/5 md:backdrop-blur-md p-5"
     >
       <div className="pointer-events-none absolute -top-24 -right-24 h-64 w-64 rounded-full opacity-20"
            style={{ background: 'radial-gradient(circle, rgba(56,189,248,.8) 0%, rgba(56,189,248,0) 60%)' }} />
@@ -54,5 +54,3 @@ const ResultCard =({ title, score, reasons = [] }: { title: string; score?: numb
     </motion.div>
   )
 }
-
-export default ResultCard;
