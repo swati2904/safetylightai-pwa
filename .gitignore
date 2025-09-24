@@ -1,30 +1,37 @@
+# Node / tooling
 node_modules/
-dist/
-*.log
-.env
-
-
-# Logs
-logs
-*.log
 npm-debug.log*
+pnpm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
+.DS_Store
 
-node_modules
-dist
-dist-ssr
-*.local
+# Env & local config
+.env
+.env.*.local
 
-# Editor directories and files
+# Build artifacts (workspace-wide)
+dist/
+build/
+coverage/
+.vite/
+.eslintcache
+.turbo/
+.parcel-cache/
+
+# Vite PWA generated SW output
+apps/pwa/dev-dist/
+
+# PWA/website temp outputs
+apps/pwa/.vite/
+
+# Shared package build output
+packages/secura-core/dist/
+
+# Chrome extension build
+apps/extension/dist/
+
+# VS Code
 .vscode/*
 !.vscode/extensions.json
-.idea
-.DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+!.vscode/settings.json

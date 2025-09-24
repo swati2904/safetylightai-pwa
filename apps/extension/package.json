@@ -1,0 +1,19 @@
+{
+  "name": "safetylight-extension",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "@safetylight/core": "file:../../packages/secura-core"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.3",
+    "vite": "^5.4.8",
+    "@types/node": "^20.11.30",
+    "chrome-types": "^0.1.247"
+  }
+}
